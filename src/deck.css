@@ -1,0 +1,107 @@
+.deck {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  background: var(--ink);
+  overflow: hidden;
+}
+
+/* ---------- progress dots ---------- */
+.deck__progress {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 50;
+}
+
+.deck__dot {
+  width: 22px;
+  height: 3px;
+  background: rgba(247, 245, 240, 0.22);
+  transition: background 0.25s ease, width 0.25s ease;
+}
+
+.deck__dot--active {
+  background: var(--vermilion);
+  width: 32px;
+}
+
+/* ---------- meta label ---------- */
+.deck__meta {
+  position: absolute;
+  top: 28px;
+  left: 40px;
+  right: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 50;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  color: rgba(247, 245, 240, 0.45);
+  pointer-events: none;
+}
+
+.deck__meta-label {
+  font-weight: 500;
+}
+
+/* ---------- stage ---------- */
+.deck__stage {
+  position: absolute;
+  inset: 0;
+}
+
+.deck__slide {
+  position: absolute;
+  inset: 0;
+  animation: slideEnter 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes slideEnter {
+  from { opacity: 0; transform: translateY(14px) scale(0.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ---------- nav arrows ---------- */
+.deck__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(247, 245, 240, 0.06);
+  color: var(--paper);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+  transition: background 0.2s ease, opacity 0.2s ease, transform 0.2s ease;
+}
+
+.deck__nav:hover:not(:disabled) {
+  background: var(--vermilion);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.deck__nav:disabled {
+  opacity: 0.15;
+  cursor: default;
+}
+
+.deck__nav--prev { left: 24px; }
+.deck__nav--next { right: 24px; }
+
+@media (max-width: 720px) {
+  .deck__nav { width: 40px; height: 40px; font-size: 15px; }
+  .deck__nav--prev { left: 10px; }
+  .deck__nav--next { right: 10px; }
+  .deck__meta { left: 20px; right: 20px; font-size: 9px; }
+  .deck__progress { top: 20px; }
+}
