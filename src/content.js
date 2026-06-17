@@ -8,8 +8,8 @@ export const bannerPairs = [
     label: 'Doprava zdarma',
     context: 'Statický banner / 4x5 a 9x16',
     images: {
-      ours: '/images/pair1-ours.png',
-      client: null, // doplnit po dodání souboru
+      ours: '/images/pair1-ours-alt.png',
+      client: '/images/pair1-client-circles.png', // doplnit po dodání souboru
     },
     verdictOurs: 'doporučeno vyšší quality score',
     verdictClient: 'vyšší text-to-image ratio',
@@ -90,7 +90,66 @@ export const bannerPairs = [
     ],
     summary: 'Quality score favorizuje náš banner, ale klientský přesto performoval srovnatelně/lépe — pattern interrupt, agresivní vizuál čísla slevy a nižší "ad-like" vzhled mohou zvýšit CTR/CVR nezávisle na quality score, které ovlivňuje primárně cenu zobrazení (CPM), ne přímo konverzi.',
   },
+  {
+    id: 'pair-4',
+    label: 'Night Shopping',
+    context: 'Statický banner / 4x5 — rozdíl mezi bannery je menší než u předchozích případů',
+    images: {
+      ours: '/images/pair5-ours.png',
+      client: '/images/pair5-client.png',
+    },
+    verdictOurs: 'jasná hierarchie a CTA',
+    verdictClient: 'chybí CTA tlačítko',
+    points: [
+      {
+        heading: 'Text na ploše',
+        ours: 'Vertikální hierarchie — datum nahoře, nadpis, sleva, podmínka, kód.',
+        client: 'Stejné sdělení komprimované do menšího prostoru, plošší hierarchie.',
+      },
+      {
+        heading: 'CTA',
+        ours: '„Nakoupit se slevou →“ — kontrastní tlačítko s šipkou.',
+        client: '„PRO SLEVU“ jen jako popisek ke kódu, bez akčního tlačítka.',
+      },
+      {
+        heading: 'Brand recall',
+        ours: 'Logo + claim, kontrastně dole vpravo na temném pozadí.',
+        client: 'Logo + claim přítomné, podobně viditelné jako u našeho banneru.',
+      },
+    ],
+    summary: 'Rozdíl mezi bannery je tu nejmenší ze všech srovnání — oba mají logo i podobnou fotku. Hlavní slabina klientského banneru je chybějící CTA tlačítko, což je opakující se problém i u dřívějších klientských kreativ.',
+  },
 ];
+
+export const singleBanner = {
+  id: 'web-leto',
+  label: 'Léto patří šatům',
+  context: 'Webový hero banner — není v Meta kampani',
+  image: '/images/web-banner-leto.png',
+  points: [
+    {
+      heading: 'Text na ploše a hierarchie',
+      text: 'Tři odlišné typografické styly v jednom sdělení (brush font, serif, brush script) — chybí jasná hierarchie hlavního nadpisu a doplňujícího textu.',
+    },
+    {
+      heading: 'CTA',
+      text: '„Chci si vybrat“ je funkční a kontrastní, ale je nejmenším a nejméně výrazným prvkem banneru, zaniká v levém dolním rohu.',
+    },
+    {
+      heading: 'Brand recall',
+      text: 'Chybí logo Evona úplně — pro konzistenci vizuální identity napříč kreativami by mělo být přítomné i na webových bannerech.',
+    },
+    {
+      heading: 'Produktové fotky',
+      text: 'Tři modelky, tři různá prostředí a barevné tóny — chybí jednotící vizuální linka, působí jako tři samostatné shooty vedle sebe.',
+    },
+    {
+      heading: 'Barva pozadí',
+      text: 'Teplá žlutooranžová asociuje léto a funguje, ale v kombinaci s nesourodými fotkami nepůsobí jako sjednocující prvek.',
+    },
+  ],
+  summary: 'Formát/poměr stran pro Meta zde nehraje roli — jde o webový hero banner. Hlavní doporučení: sjednotit typografii na max. 2 styly, doplnit logo, sjednotit produktové fotky a posílit CTA vizuálně.',
+};
 
 export const doList = [
   'Čistý vizuál s minimem textu — produkt/lifestyle foto na většině plochy.',

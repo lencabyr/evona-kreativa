@@ -54,6 +54,6 @@ Otevři `src/content.js` a přidej nový objekt do `bannerPairs` array, např.:
 
 Samotné obrázky vlož do `public/images/`. Slide se do prezentace zařadí automaticky — nemusí se upravovat `App.jsx` ani CSS.
 
-## Pozn. k chybějícímu obrázku
+## Jak přidat samostatný banner (bez srovnání náš/klientský)
 
-`pair-1.images.client` je momentálně `null` (banner s červenými kruhy "VÍKENDOVÁ DOPRAVA ZDARMA" nebyl nahraný jako soubor, jen vložen v textu konverzace). Po doplnění souboru do `public/images/` stačí v `content.js` vyplnit cestu.
+Pro bannery, které nejdou do Meta kampaně a nemá smysl je srovnávat s klientskou variantou (např. webové hero bannery), slouží `singleBanner` v `src/content.js`. Momentálně obsahuje jeden banner ("Léto patří šatům"). Pokud bys chtěla přidat víc takových samostatných bannerů najednou, struktura by se musela změnit z jednoho objektu na array — ozvi se a upravím to.
